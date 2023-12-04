@@ -7,10 +7,15 @@ class MaClass
     public $age = 37;
     public $prenom;
     public const PI = 3.14; //les constantes se déclarent entièrement en majuscule
-    public int $rayon;
+    public float|int $rayon;
 
-    private $_attributPrivate; //par convention on commence un attribut privé par un underscore _
-    private $_nom = 'Michel PLIK';
+    // private $_attributPrivate; //par convention on commence un attribut privé par un underscore _
+    // private $_nom = 'Michel PLIK';
+
+    public function __construct()
+    {
+        echo 'Je suis une méthode "magique" ! <br>'; //un constructeur se lance toujours quand on instancie la classe
+    }
 
     public function displayMethode($value) // méthode
     {
@@ -24,9 +29,14 @@ class MaClass
         return self::PI * $this->rayon * $this->rayon;
     }
 
-    public function calculAireDeux($ray)
+    public function calculAireDeux(float|int $ray): float|int
     {
-        return self::PI*$ray*$ray;
+        return self::PI * $ray * $ray;
+    }
+
+    public function __destruct()
+    {
+        echo 'Je suis une methode magique (__destruct) de la ' . __CLASS__ . '<br>';//detruct se lance dès qu'on a fini d'instancer la classe
     }
 }
 
@@ -43,6 +53,6 @@ $obj->prenom = 'Bill'; //Je renseigne le prénom à l'exterieur de la classe ave
 // echo $obj->displayMethode("osef");
 
 $obj->rayon = 5;
-echo $obj->calculCercleAire().'<br>';
+echo $obj->calculCercleAire() . '<br>';
 
-echo $obj->calculAireDeux(5);
+echo $obj->calculAireDeux(3.5) . '<br>';
