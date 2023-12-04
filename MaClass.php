@@ -10,8 +10,10 @@ class MaClass
     public float|int $rayon;
     static string $varStatic = 'Je suis une variable statique.';
 
-    // private $_attributPrivate; //par convention on commence un attribut privé par un underscore _
-    // private $_nom = 'Michel PLIK';
+    private $_attributPrivate; //par convention on commence un attribut privé par un underscore _
+    private $_nom = 'Michel PLIK';
+
+    protected string $varProtected = 'Je suis une variable protected';
 
     public function __construct()
     {
@@ -37,11 +39,26 @@ class MaClass
 
     static function staticFunc()
     {
-        return 'Methode Statique affichant une variable statique : '.self::$varStatic;
+        return 'Methode Statique affichant une variable statique : ' . self::$varStatic;
     }
 
-    public function __destruct()
+    public function getNom()
     {
-        echo 'Je suis une methode magique de ' . __CLASS__ . '.<br>'; //detruct se lance dès qu'on a fini d'instancer la classe
+        return $this->_nom;
     }
+
+    public function setNom($nom)
+    {
+        $this->_nom = $nom;
+    }
+
+    //     public function __destruct()
+    //     {
+    //         echo 'Je suis une methode magique de ' . __CLASS__ . '.<br>'; //detruct se lance dès qu'on a fini d'instancer la classe
+    //     }
+
+    //     public function getVariableProtected()
+    //     {
+    //         return $this->varProtected;
+    //     }
 }

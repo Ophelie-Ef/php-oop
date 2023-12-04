@@ -2,8 +2,13 @@
 
 class MaClassHerite extends MaClass
 {
-    public function __construct()
+    // public function __construct()
+    // {
+    //     parent::__construct();
+    // }
+
+    public function getCouleur()
     {
-        parent::__construct();
+        return $this->couleur;
     }
 }

@@ -23,4 +23,16 @@ $obj = new MaClass(); //creation d'un objet
 
 // echo MaClass::staticFunc().'<br>';
 
-$objHerite = new MaClassHerite();
+// $objHerite = new MaClassHerite();
+
+// echo $objHerite->getCouleur();
+
+// echo $objHerite->getVariableProtected();
+
+// echo $obj2->varProtected; //impossible avec une  var protegee
+
+$obj2 = new MaClass();
+
+$obj2->setNom('John Doe');
+
+echo $obj2->getNom();
