@@ -1,6 +1,6 @@
 <?php
 include 'MaClass.php';
-include 'MaClasseHerite.php';
+include 'MaClassHerite.php';
 
 $obj = new MaClass(); //creation d'un objet
 
