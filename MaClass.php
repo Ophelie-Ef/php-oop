@@ -35,6 +35,11 @@ class MaClass
         return self::PI * $ray * $ray;
     }
 
+    static function staticFunc()
+    {
+        return 'Methode Statique affichant une variable statique : '.self::$varStatic;
+    }
+
     public function __destruct()
     {
         echo 'Je suis une methode magique de ' . __CLASS__ . '.<br>'; //detruct se lance dès qu'on a fini d'instancer la classe
@@ -59,3 +64,5 @@ echo $obj->calculCercleAire() . '<br>';
 echo $obj->calculAireDeux(3.5) . '<br>';
 
 echo MaClass::$varStatic.'<br>';
+
+echo MaClass::staticFunc().'<br>';
