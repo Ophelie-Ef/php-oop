@@ -1,0 +1,2 @@
+<?php
+include 'MaClasse.php';
