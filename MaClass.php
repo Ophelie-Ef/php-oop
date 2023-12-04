@@ -8,6 +8,7 @@ class MaClass
     public $prenom;
     public const PI = 3.14; //les constantes se déclarent entièrement en majuscule
     public float|int $rayon;
+    static string $varStatic = 'Je suis une variable statique.';
 
     // private $_attributPrivate; //par convention on commence un attribut privé par un underscore _
     // private $_nom = 'Michel PLIK';
@@ -36,7 +37,7 @@ class MaClass
 
     public function __destruct()
     {
-        echo 'Je suis une methode magique (__destruct) de la ' . __CLASS__ . '<br>';//detruct se lance dès qu'on a fini d'instancer la classe
+        echo 'Je suis une methode magique de ' . __CLASS__ . '.<br>'; //detruct se lance dès qu'on a fini d'instancer la classe
     }
 }
 
@@ -56,3 +57,5 @@ $obj->rayon = 5;
 echo $obj->calculCercleAire() . '<br>';
 
 echo $obj->calculAireDeux(3.5) . '<br>';
+
+echo MaClass::$varStatic.'<br>';
