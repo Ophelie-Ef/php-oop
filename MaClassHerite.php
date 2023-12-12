@@ -11,4 +11,14 @@ class MaClassHerite extends MaClass
     {
         return $this->couleur;
     }
+
+    public function getVariableProtected()
+    {
+        return $this->varProtected;
+    }
+
+    public function setVariableProtected($value)
+    {
+        $this->varProtected= $value;
+    }
 }

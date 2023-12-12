@@ -15,10 +15,10 @@ class MaClass
 
     protected string $varProtected = 'Je suis une variable protected';
 
-    public function __construct()
-    {
-        echo 'Je suis une méthode "magique" ! <br>'; //un constructeur se lance toujours quand on instancie la classe
-    }
+    // public function __construct()
+    // {
+    //     echo 'Je suis une méthode "magique" ! <br>'; //un constructeur se lance toujours quand on instancie la classe
+    // }
 
     public function displayMethode($value) // méthode
     {

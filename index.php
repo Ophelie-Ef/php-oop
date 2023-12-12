@@ -2,7 +2,7 @@
 include 'MaClass.php';
 include 'MaClassHerite.php';
 
-$obj = new MaClass(); //creation d'un objet
+// $obj = new MaClass(); //creation d'un objet
 
 // echo 'Couleur : ' . $obj->couleur . '<br>';
 // echo 'Age :' . $obj->age . '<br>';
@@ -31,8 +31,14 @@ $obj = new MaClass(); //creation d'un objet
 
 // echo $obj2->varProtected; //impossible avec une  var protegee
 
-$obj2 = new MaClass();
+//
 
-$obj2->setNom('John Doe');
+// $obj2 = new MaClass();
 
-echo $obj2->getNom();
+// $obj2->setNom('John Doe');
+
+// echo $obj2->getNom();
+
+$personne2 = new MaClassHerite();
+$personne2->setVariableProtected('Un Chêne de caractère');
+echo $personne2->getVariableProtected();
