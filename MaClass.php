@@ -32,6 +32,10 @@ class MaClass
         return $this->prenom . ' aime la couleur ' . $this->couleur;
     }
 
+    public function afficherPersonne($value){
+        return $this->prenom.' '.$this->nom.'.';
+    }
+
     public function calculCercleAire()
     {
         return self::PI * $this->rayon * $this->rayon;
@@ -49,27 +53,31 @@ class MaClass
 
     public function __destruct()
     {
-        echo 'Je suis une methode magique de ' . __CLASS__ . '.<br>'; //detruct se lance dès qu'on a fini d'instancer la classe
+        echo '<br>Je suis une methode magique de ' . __CLASS__ . '.<br>'; //detruct se lance dès qu'on a fini d'instancer la classe
     }
 }
 
-$obj = new MaClass($nom, $prenom); //creation d'un objet
+// $obj = new MaClass($nom, $prenom); //creation d'un objet
 
-// echo 'Couleur : ' . $obj->couleur . '<br>';
-// echo 'Age :' . $obj->age . '<br>';
+// // echo 'Couleur : ' . $obj->couleur . '<br>';
+// // echo 'Age :' . $obj->age . '<br>';
 
-//echo 'Nom :'.$obj->_nom;      // Ne peux fonctionner : on ne peux acceder à un attribut privé en dehors de sa classe
-// $obj->displayMethode("Coucou !");
+// //echo 'Nom :'.$obj->_nom;      // Ne peux fonctionner : on ne peux acceder à un attribut privé en dehors de sa classe
+// // $obj->displayMethode("Coucou !");
 
-$obj->prenom = 'Bill'; //Je renseigne le prénom à l'exterieur de la classe avec mon objet
+// $obj->prenom = 'Bill'; //Je renseigne le prénom à l'exterieur de la classe avec mon objet
 
-// echo $obj->displayMethode("osef");
+// // echo $obj->displayMethode("osef");
 
-$obj->rayon = 5;
-echo $obj->calculCercleAire() . '<br>';
+// $obj->rayon = 5;
+// echo $obj->calculCercleAire() . '<br>';
 
-echo $obj->calculAireDeux(3.5) . '<br>';
+// echo $obj->calculAireDeux(3.5) . '<br>';
 
-echo MaClass::$varStatic . '<br>';
+// echo MaClass::$varStatic . '<br>';
 
-echo MaClass::staticFunc() . '<br>';
+// echo MaClass::staticFunc() . '<br>';
+
+$person = new MaClass('Mortimer', 'Phillip');
+
+echo $person->afficherPersonne($person);
