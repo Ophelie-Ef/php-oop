@@ -5,6 +5,7 @@ class MaClass
     public $attributPublic;
     public $couleur = 'vert';
     public $age = 37;
+    public $nom;
     public $prenom;
     public const PI = 3.14; //les constantes se déclarent entièrement en majuscule
     public float|int $rayon;
@@ -13,9 +14,15 @@ class MaClass
     // private $_attributPrivate; //par convention on commence un attribut privé par un underscore _
     // private $_nom = 'Michel PLIK';
 
-    public function __construct()
+    // public function __construct()
+    // {
+    //     echo 'Je suis une méthode "magique" ! <br>'; //un constructeur se lance toujours quand on instancie la classe
+    // }
+
+    public function __construct($nom, $prenom)
     {
-        echo 'Je suis une méthode "magique" ! <br>'; //un constructeur se lance toujours quand on instancie la classe
+        $this->nom = $nom;
+        $this->prenom = $prenom;
     }
 
     public function displayMethode($value) // méthode
@@ -37,7 +44,7 @@ class MaClass
 
     static function staticFunc()
     {
-        return 'Methode Statique affichant une variable statique : '.self::$varStatic;
+        return 'Methode Statique affichant une variable statique : ' . self::$varStatic;
     }
 
     public function __destruct()
@@ -46,7 +53,7 @@ class MaClass
     }
 }
 
-$obj = new MaClass(); //creation d'un objet
+$obj = new MaClass($nom, $prenom); //creation d'un objet
 
 // echo 'Couleur : ' . $obj->couleur . '<br>';
 // echo 'Age :' . $obj->age . '<br>';
@@ -63,6 +70,6 @@ echo $obj->calculCercleAire() . '<br>';
 
 echo $obj->calculAireDeux(3.5) . '<br>';
 
-echo MaClass::$varStatic.'<br>';
+echo MaClass::$varStatic . '<br>';
 
-echo MaClass::staticFunc().'<br>';
+echo MaClass::staticFunc() . '<br>';
